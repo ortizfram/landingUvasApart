@@ -25,7 +25,7 @@
 
 const CLOUDBEDS_API_BASE = "https://api.cloudbeds.com/api/v1.3";
 const DEFAULT_GHL_INBOUND_WEBHOOK_URL =
-  "https://services.leadconnectorhq.com/hooks/CegTFhE8LXsd7FFwgbIh/webhook-trigger/732109c7-ca54-4bda-af42-c017d7878c2b";
+  "https://services.leadconnectorhq.com/hooks/CegTFhE8LXsd7FFwgbIh/webhook-trigger/2bf8a41e-6eb9-44fd-a9c2-6a000327bbc5";
 
 function doPost(e) {
   const secret = (e && e.parameter && e.parameter.secret) ? String(e.parameter.secret) : "";
