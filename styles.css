@@ -378,6 +378,10 @@ h1 {
   resize: vertical;
 }
 
+.cloudbeds-reserva {
+  margin-top: 14px;
+}
+
 .lead-form input:focus,
 .lead-form select:focus,
 .lead-form textarea:focus {
