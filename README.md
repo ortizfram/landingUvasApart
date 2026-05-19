@@ -55,10 +55,11 @@ Este repo incluye un puente listo para pegar en Apps Script:
 2. GoHighLevel: crear un Workflow con trigger `Inbound Webhook` y copiar la URL del webhook.
 3. Apps Script: crear un Web App público y guardar en Script Properties:
    - `CLOUDBEDS_API_KEY`
-   - `GHL_INBOUND_WEBHOOK_URL`
    - `WEBHOOK_SHARED_SECRET`
 4. Cloudbeds: suscribirse al webhook `reservation/status_changed` y filtrar `status=confirmed` (o suscribirse a `reservation/created` si preferís).
    - El endpoint URL debe ser el Web App URL + `?secret=<WEBHOOK_SHARED_SECRET>`
+
+La URL de GoHighLevel que compartiste ya quedó cargada como destino por defecto en `cloudbeds-ghl-apps-script.gs`, así que esa propiedad es opcional salvo que más adelante quieras apuntar a otro workflow.
 
 ### Payload recomendado
 

@@ -11,7 +11,6 @@
  * 1) Create a new Apps Script project and paste this file.
  * 2) In Project Settings -> Script properties, set:
  *    - CLOUDBEDS_API_KEY        (e.g. cbat_....)
- *    - GHL_INBOUND_WEBHOOK_URL  (from your GHL Workflow "Inbound Webhook" trigger URL)
  *    - WEBHOOK_SHARED_SECRET    (random string; you'll add it to the Cloudbeds webhook URL as ?secret=...)
  * 3) Deploy -> New deployment -> Web app:
  *    - Execute as: Me
@@ -25,6 +24,8 @@
  */
 
 const CLOUDBEDS_API_BASE = "https://api.cloudbeds.com/api/v1.3";
+const DEFAULT_GHL_INBOUND_WEBHOOK_URL =
+  "https://services.leadconnectorhq.com/hooks/CegTFhE8LXsd7FFwgbIh/webhook-trigger/732109c7-ca54-4bda-af42-c017d7878c2b";
 
 function doPost(e) {
   const secret = (e && e.parameter && e.parameter.secret) ? String(e.parameter.secret) : "";
@@ -203,7 +204,9 @@ function normalize_(eventPayload, reservationResponse) {
 }
 
 function sendToGhl_(payload) {
-  const ghlUrl = String(PropertiesService.getScriptProperties().getProperty("GHL_INBOUND_WEBHOOK_URL") || "");
+  const ghlUrl = String(
+    PropertiesService.getScriptProperties().getProperty("GHL_INBOUND_WEBHOOK_URL") || DEFAULT_GHL_INBOUND_WEBHOOK_URL
+  );
   if (!ghlUrl) {
     throw new Error("Missing GHL_INBOUND_WEBHOOK_URL in script properties");
   }
