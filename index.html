@@ -122,9 +122,14 @@
               <textarea name="message" rows="3" placeholder="Fechas flexibles, cochera, tipo de depto..."></textarea>
             </label>
             <button class="primary-btn" type="submit">Quiero mi descuento</button>
-            <div class="cloudbeds-reserva">
-              <script src="https://hotels.cloudbeds.com/widget/load/PwLRQb/float?newWindow=1"></script>
-            </div>
+            <section class="cloudbeds-box" aria-label="Presupuesto y disponibilidad">
+              <div class="cloudbeds-box-head">
+                <h3>Obtén tu presupuesto y ve disponibilidad de fechas</h3>
+              </div>
+              <div class="cloudbeds-box-body">
+                <script src="https://hotels.cloudbeds.com/widget/load/PwLRQb/horiz?newWindow=1"></script>
+              </div>
+            </section>
             <p class="form-note">Tus datos se guardan para gestión comercial de Uvas Apart Hotel.</p>
             <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
           </form>

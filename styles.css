@@ -378,8 +378,31 @@ h1 {
   resize: vertical;
 }
 
-.cloudbeds-reserva {
+.cloudbeds-box {
   margin-top: 14px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(216, 165, 67, 0.55);
+  border-radius: 8px;
+  box-shadow: 0 18px 46px rgba(20, 9, 28, 0.14);
+}
+
+.cloudbeds-box-head {
+  padding: 14px 14px 12px;
+  background: var(--gold);
+  color: #fff;
+}
+
+.cloudbeds-box-head h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.cloudbeds-box-body {
+  padding: 14px;
 }
 
 .lead-form input:focus,
