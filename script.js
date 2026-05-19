@@ -3,24 +3,9 @@
   const status = document.querySelector("#formStatus");
   const cloudbedsUrl = window.UVAS_CLOUDBEDS_URL || "https://hotels.cloudbeds.com/reservation/PwLRQb?currency=ARS";
   const endpoint = window.UVAS_LEADS_ENDPOINT || "";
-  const ghlTrackingSrc = window.UVAS_GHL_EXTERNAL_TRACKING_SRC || "";
-  const ghlTrackingId = window.UVAS_GHL_TRACKING_ID || "";
 
   function pad(value) {
     return String(value).padStart(2, "0");
-  }
-
-  function installGhlExternalTracking() {
-    if (!ghlTrackingSrc || !ghlTrackingId) return false;
-    const existing = document.querySelector(`script[data-tracking-id="${ghlTrackingId}"]`);
-    if (existing) return true;
-
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = ghlTrackingSrc;
-    script.setAttribute("data-tracking-id", ghlTrackingId);
-    document.body.appendChild(script);
-    return true;
   }
 
   function updateCountdown() {
@@ -65,15 +50,10 @@
 
   async function submitLead(payload) {
     if (!endpoint) {
-      if (ghlTrackingSrc && ghlTrackingId) {
-        // External Tracking captures the DOM-based form submission into GoHighLevel.
-        return { offline: false, ghl: true };
-      }
-
       const stored = JSON.parse(localStorage.getItem("uvas_leads_pending") || "[]");
       stored.push(payload);
       localStorage.setItem("uvas_leads_pending", JSON.stringify(stored));
-      return { offline: true, ghl: false };
+      return { offline: true };
     }
 
     await fetch(endpoint, {
@@ -104,7 +84,7 @@
     };
 
     if (!payload.name || !payload.whatsapp || !payload.email) {
-      setStatus("Completá nombre, WhatsApp y email para activar la promo.", "is-error");
+      setStatus("Completa nombre, WhatsApp y email para activar la promo.", "is-error");
       return;
     }
 
@@ -117,8 +97,8 @@
       form.reset();
       setStatus(
         result.offline
-          ? "Datos guardados localmente. Falta configurar GoHighLevel (External Tracking) o el endpoint de Google Sheets."
-          : "Listo. Ya activaste la promo, ahora podés consultar disponibilidad.",
+          ? "Datos guardados localmente. Falta configurar el endpoint de Google Sheets."
+          : "Listo. Ya activaste la promo, ahora podes consultar disponibilidad.",
         result.offline ? "is-error" : "is-ok"
       );
 
@@ -128,7 +108,7 @@
         }, 750);
       }
     } catch (error) {
-      setStatus("No pudimos guardar el contacto. Probá de nuevo en unos segundos.", "is-error");
+      setStatus("No pudimos guardar el contacto. Proba de nuevo en unos segundos.", "is-error");
     } finally {
       button.disabled = false;
       button.textContent = "Quiero mi descuento";
@@ -137,8 +117,4 @@
 
   updateCountdown();
   window.setInterval(updateCountdown, 1000);
-
-  // Install GoHighLevel External Tracking after the page is ready.
-  // This keeps the landing self-hosted/centralized while sending leads into GHL CRM.
-  installGhlExternalTracking();
 })();
