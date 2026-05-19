@@ -41,6 +41,29 @@ Si querés capturar los contactos en GoHighLevel de forma centralizada (CRM + wo
 
 El script detecta el `<form>` y guarda los leads en GoHighLevel sin necesidad de endpoint propio. (No sirve con forms en iframe; este sitio usa un `<form>` real.)
 
+## Cloudbeds -> GoHighLevel (reservas confirmadas)
+
+Si querés que GoHighLevel (Funnel ROI / workflows) reciba los datos de una reserva cuando queda confirmada en Cloudbeds, necesitás un endpoint servidor-a-servidor que reciba webhooks de Cloudbeds y reenvíe el detalle a GoHighLevel.
+
+Este repo incluye un puente listo para pegar en Apps Script:
+
+`cloudbeds-ghl-apps-script.gs`
+
+### Configuración (resumen)
+
+1. Cloudbeds: crear un API Key (se usa como `x-api-key` en API calls).
+2. GoHighLevel: crear un Workflow con trigger `Inbound Webhook` y copiar la URL del webhook.
+3. Apps Script: crear un Web App público y guardar en Script Properties:
+   - `CLOUDBEDS_API_KEY`
+   - `GHL_INBOUND_WEBHOOK_URL`
+   - `WEBHOOK_SHARED_SECRET`
+4. Cloudbeds: suscribirse al webhook `reservation/status_changed` y filtrar `status=confirmed` (o suscribirse a `reservation/created` si preferís).
+   - El endpoint URL debe ser el Web App URL + `?secret=<WEBHOOK_SHARED_SECRET>`
+
+### Payload recomendado
+
+Cloudbeds webhooks traen un payload corto (ej. reservationId + status). Para tener datos completos, el bridge llama a `GET https://api.cloudbeds.com/api/v1.3/getReservation` y le manda a GoHighLevel un JSON normalizado con `guest`, `startDate`, `endDate`, `status`, `total` y además el `raw` completo de Cloudbeds.
+
 ## Cloudbeds
 
 El motor oficial configurado es:
