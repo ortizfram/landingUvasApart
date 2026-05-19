@@ -28,7 +28,18 @@ Pasos para activar el guardado real:
 8. Copiar la URL del web app.
 9. Pegar esa URL en `config.js`, en `window.UVAS_LEADS_ENDPOINT`.
 
-Mientras `window.UVAS_LEADS_ENDPOINT` esté vacío, el formulario guarda los leads solo en el navegador del visitante y muestra aviso de configuración pendiente.
+Mientras `window.UVAS_LEADS_ENDPOINT` esté vacío, el formulario no envía a Sheets.
+
+## GoHighLevel (recomendado)
+
+Si querés capturar los contactos en GoHighLevel de forma centralizada (CRM + workflows), usá External Tracking.
+
+1. En GoHighLevel: `Settings -> External Tracking -> Copy Script`.
+2. En `config.js`, completar:
+   - `window.UVAS_GHL_EXTERNAL_TRACKING_SRC`
+   - `window.UVAS_GHL_TRACKING_ID`
+
+El script detecta el `<form>` y guarda los leads en GoHighLevel sin necesidad de endpoint propio. (No sirve con forms en iframe; este sitio usa un `<form>` real.)
 
 ## Cloudbeds
 
