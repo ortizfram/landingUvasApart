@@ -57,12 +57,6 @@
 
   function buildCloudbedsUrl(payload) {
     const url = new URL(cloudbedsUrl);
-    if (payload.checkin) {
-      url.searchParams.set("checkin", payload.checkin);
-    }
-    if (payload.checkout) {
-      url.searchParams.set("checkout", payload.checkout);
-    }
     if (payload.guests) {
       url.searchParams.set("adults", payload.guests);
     }
@@ -102,8 +96,6 @@
       name: String(data.get("name") || "").trim(),
       whatsapp: String(data.get("whatsapp") || "").trim(),
       email: String(data.get("email") || "").trim(),
-      checkin: String(data.get("checkin") || "").trim(),
-      checkout: String(data.get("checkout") || "").trim(),
       guests: String(data.get("guests") || "").trim(),
       message: String(data.get("message") || "").trim(),
       source: "landing-github-pages",
