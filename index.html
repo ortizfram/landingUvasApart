@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Uvas Apart Hotel | Descuento directo en Mendoza Centro</title>
+    <meta name="description" content="Activá un descuento directo para alojarte en Uvas Apart Hotel, frente a Plaza Independencia, Mendoza. Dejá tu WhatsApp y email para recibir la promo.">
+    <meta property="og:title" content="Uvas Apart Hotel | Promo directa">
+    <meta property="og:description" content="Departamentos amplios frente a Plaza Independencia. Activá tu descuento directo dejando tus datos.">
+    <meta property="og:image" content="assets/hero-recepcion.jpg">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="config.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="promo-strip" aria-label="Promociones">
+      <div class="ticker">
+        <span>DESCUENTO DIRECTO</span>
+        <span>FRENTE A PLAZA INDEPENDENCIA</span>
+        <span>RESERVA SEGURA</span>
+        <span>DEPARTAMENTOS AMPLIOS</span>
+        <span>DESCUENTO DIRECTO</span>
+        <span>FRENTE A PLAZA INDEPENDENCIA</span>
+        <span>RESERVA SEGURA</span>
+        <span>DEPARTAMENTOS AMPLIOS</span>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Principal">
+        <a href="#habitaciones">Habitaciones</a>
+        <a href="#beneficios">Servicios</a>
+        <a href="#opiniones">Opiniones</a>
+        <a class="brand" href="#" aria-label="Uvas Apart Hotel inicio">
+          <img src="assets/logo-uvas-color.png" alt="Uvas Apart Hotel">
+        </a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#faq">Preguntas</a>
+        <a class="nav-cta" href="#descuento">Activar descuento</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="descuento">
+        <div class="hero-media" role="img" aria-label="Recepción de Uvas Apart Hotel en Mendoza"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-copy">
+            <div class="trust-pill">
+              <span class="avatar-stack">
+                <span>5.0</span>
+                <span>★</span>
+                <span>★</span>
+              </span>
+              <strong>Huéspedes felices en pleno centro</strong>
+            </div>
+            <p class="eyebrow">Promo directa por tiempo limitado</p>
+            <h1>Tu apart en Mendoza con descuento exclusivo</h1>
+            <p class="hero-lede">Dormí frente a Plaza Independencia, con departamentos amplios, cocina equipada, balcón, WiFi y atención local para moverte fácil por la ciudad.</p>
+
+            <div class="deal-box">
+              <p class="deal-kicker">Activá la promo</p>
+              <strong>Dejá tus datos y recibí el mejor precio directo</strong>
+              <span>Sin intermediarios. Te contactamos por WhatsApp para ayudarte con fechas y disponibilidad.</span>
+            </div>
+
+            <div class="countdown" aria-label="Tiempo restante de la promo">
+              <span>La ventana de descuento se renueva en</span>
+              <div class="time-grid">
+                <div><strong data-count="hours">--</strong><small>horas</small></div>
+                <div><strong data-count="minutes">--</strong><small>min</small></div>
+                <div><strong data-count="seconds">--</strong><small>seg</small></div>
+              </div>
+            </div>
+          </div>
+
+          <form class="lead-form" id="leadForm" autocomplete="on">
+            <div class="form-head">
+              <span>Acceso al descuento</span>
+              <h2>Recibí la promo por WhatsApp</h2>
+              <p>Completá tus datos y avanzá a consultar disponibilidad en Cloudbeds.</p>
+            </div>
+
+            <label>
+              Nombre
+              <input name="name" type="text" placeholder="Tu nombre" required>
+            </label>
+            <label>
+              WhatsApp
+              <input name="whatsapp" type="tel" inputmode="tel" placeholder="+54 9 261..." required>
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" placeholder="tu@email.com" required>
+            </label>
+            <div class="form-row">
+              <label>
+                Check-in
+                <input name="checkin" type="date">
+              </label>
+              <label>
+                Check-out
+                <input name="checkout" type="date">
+              </label>
+            </div>
+            <label>
+              Personas
+              <select name="guests">
+                <option value="2">2 personas</option>
+                <option value="3">3 personas</option>
+                <option value="4">4 personas</option>
+                <option value="5">5 personas</option>
+                <option value="6">6 personas</option>
+              </select>
+            </label>
+            <label>
+              Comentario
+              <textarea name="message" rows="3" placeholder="Fechas flexibles, cochera, tipo de depto..."></textarea>
+            </label>
+            <button class="primary-btn" type="submit">Quiero mi descuento</button>
+            <p class="form-note">Tus datos se guardan para gestión comercial de Uvas Apart Hotel.</p>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="marquee-benefits" id="beneficios" aria-label="Beneficios principales">
+        <div class="benefit-track">
+          <span>WiFi para trabajar</span>
+          <span>Desayuno</span>
+          <span>Estacionamiento</span>
+          <span>Balcón</span>
+          <span>Cocina equipada</span>
+          <span>Habitaciones familiares</span>
+          <span>Ubicación estratégica</span>
+          <span>WiFi para trabajar</span>
+          <span>Desayuno</span>
+          <span>Estacionamiento</span>
+        </div>
+      </section>
+
+      <section class="section intro">
+        <div class="section-label">Mendoza cómodo, simple y céntrico</div>
+        <h2>El punto de partida ideal para caminar, salir a comer y hacer excursiones</h2>
+        <p>Uvas Apart Hotel está frente a Plaza Independencia, cerca de bares, restaurantes, teatro, casino, bancos y servicios turísticos. Una base práctica para parejas, familias y viajes de trabajo.</p>
+      </section>
+
+      <section class="section split" id="habitaciones">
+        <div class="image-stack">
+          <img class="image-main" src="assets/departamento-balcon.jpg" alt="Departamento con balcón de Uvas Apart Hotel">
+          <img class="image-float" src="assets/superior-balcon.jpg" alt="Departamento superior con balcón">
+        </div>
+        <div class="split-copy">
+          <p class="eyebrow dark">Más lugar que una habitación tradicional</p>
+          <h2>Departamentos amplios para descansar de verdad</h2>
+          <p>Espacios con cocina, camas cómodas y opciones familiares para que tu estadía no dependa de horarios ni de recorridos largos.</p>
+          <div class="feature-list">
+            <article>
+              <strong>Centro real</strong>
+              <span>A pasos de Plaza Independencia.</span>
+            </article>
+            <article>
+              <strong>Flexibilidad</strong>
+              <span>Ideal para escapadas, trabajo o vacaciones.</span>
+            </article>
+            <article>
+              <strong>Reserva directa</strong>
+              <span>Consultá disponibilidad en el motor oficial.</span>
+            </article>
+          </div>
+          <a class="secondary-btn" href="#descuento">Activar promo</a>
+        </div>
+      </section>
+
+      <section class="stock-band">
+        <div>
+          <span>Promoción directa</span>
+          <strong>Cupos diarios para consultas con descuento</strong>
+        </div>
+        <div class="stock-meter" aria-label="Cupos restantes">
+          <span></span>
+        </div>
+        <p>Cuando se completan los cupos, la reserva sigue disponible al precio publicado en Cloudbeds.</p>
+      </section>
+
+      <section class="section cards">
+        <div class="section-label">Por qué reservar acá</div>
+        <h2>Todo lo que buscás antes de elegir alojamiento</h2>
+        <div class="card-grid">
+          <article>
+            <span class="card-icon">01</span>
+            <h3>Mejor precio directo</h3>
+            <p>Sin comisiones de intermediarios y con seguimiento personalizado por WhatsApp.</p>
+          </article>
+          <article>
+            <span class="card-icon">02</span>
+            <h3>Ubicación estratégica</h3>
+            <p>Frente a Plaza Independencia, cerca de gastronomía, excursiones y servicios.</p>
+          </article>
+          <article>
+            <span class="card-icon">03</span>
+            <h3>Departamentos equipados</h3>
+            <p>Más independencia para estadías cortas o largas, familias y viajes laborales.</p>
+          </article>
+          <article>
+            <span class="card-icon">04</span>
+            <h3>Atención local</h3>
+            <p>Te ayudamos a elegir fechas, categoría y opciones útiles para tu viaje.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section gallery">
+        <img src="assets/interior.jpg" alt="Interior de departamento estándar">
+        <img src="assets/pasillo.jpg" alt="Espacios comunes de Uvas Apart Hotel">
+        <img src="assets/superior-balcon.jpg" alt="Departamento superior con balcón">
+      </section>
+
+      <section class="section reviews" id="opiniones">
+        <div class="section-label">Huéspedes reales</div>
+        <h2>Lo que más valoran quienes ya se alojaron</h2>
+        <div class="review-grid">
+          <article>
+            <div class="stars">★★★★★</div>
+            <p>"Las habitaciones son espaciosas y muy cómodas, con balcón precioso. La ubicación es excelente, diagonal a la plaza y cerca de todo."</p>
+            <strong>Maru</strong>
+            <span>Tripadvisor</span>
+          </article>
+          <article>
+            <div class="stars">★★★★★</div>
+            <p>"Estuvimos cinco días con amigas. La recepción fue muy agradable, todo limpio y la ubicación excelente."</p>
+            <strong>Flavia</strong>
+            <span>Tripadvisor</span>
+          </article>
+          <article>
+            <div class="stars">★★★★★</div>
+            <p>"El personal es muy amable, los departamentos increíbles y las camas muy cómodas. Volvería sin dudar."</p>
+            <strong>Rocio</strong>
+            <span>Tripadvisor</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section location" id="ubicacion">
+        <div>
+          <p class="eyebrow dark">Ubicación</p>
+          <h2>Frente a Plaza Independencia</h2>
+          <p>Una ubicación simple para moverte caminando por el centro de Mendoza, salir a cenar o coordinar excursiones sin perder tiempo.</p>
+        </div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Uvas+Apart+Hotel+Mendoza" target="_blank" rel="noopener">Ver en Google Maps</a>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="section-label">Preguntas frecuentes</div>
+        <details open>
+          <summary>¿Cómo recibo el descuento?</summary>
+          <p>Completás el formulario y el equipo de Uvas Apart Hotel te contacta por WhatsApp con la mejor opción disponible para tus fechas.</p>
+        </details>
+        <details>
+          <summary>¿La disponibilidad es en tiempo real?</summary>
+          <p>La disponibilidad y tarifas se consultan en el motor oficial de Cloudbeds. El formulario sirve para activar seguimiento y promo directa.</p>
+        </details>
+        <details>
+          <summary>¿Puedo reservar para familia o grupo?</summary>
+          <p>Sí. Hay departamentos amplios y opciones para distintas ocupaciones. Indicá la cantidad de personas al pedir la promo.</p>
+        </details>
+      </section>
+
+      <section class="final-cta">
+        <p>Último paso</p>
+        <h2>Activá el descuento antes de consultar disponibilidad</h2>
+        <a class="primary-btn" href="#descuento">Completar formulario</a>
+        <a class="ghost-btn" href="https://hotels.cloudbeds.com/reservation/PwLRQb?currency=ARS" target="_blank" rel="noopener">Ver motor oficial</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img src="assets/logo-uvas-color.png" alt="Uvas Apart Hotel">
+      <p>Uvas Apart Hotel, Mendoza Centro. Reservas directas y consultas por WhatsApp.</p>
+    </footer>
+  </body>
+</html>
