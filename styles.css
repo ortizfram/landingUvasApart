@@ -557,7 +557,7 @@ h1 {
 
 .promo-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -650,37 +650,8 @@ h1 {
   background-image: url("assets/promo-otono-parque.png");
 }
 
-.promo-car::before {
-  background-image:
-    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.45), transparent 35%),
-    linear-gradient(135deg, rgba(255, 245, 218, 0.55) 0%, rgba(244, 211, 138, 0.42) 42%, rgba(232, 191, 92, 0.48) 100%),
-    url("assets/fiat-cronos.png");
-  background-size: cover, cover, 120% auto;
-  background-position: center, center, 110% 65%;
-  background-repeat: no-repeat;
-}
-
 .intro {
   text-align: center;
-}
-
-.intro-split {
-  display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: 34px;
-  align-items: stretch;
-  text-align: left;
-}
-
-.intro-main {
-  display: grid;
-  align-content: center;
-  min-height: 100%;
-  padding: 30px 8px;
-}
-
-.intro-main .section-label {
-  margin-bottom: 14px;
 }
 
 .intro h2,
@@ -699,75 +670,6 @@ h1 {
   color: var(--muted);
   font-size: 1.04rem;
   line-height: 1.8;
-}
-
-.intro-main h2,
-.intro-main p {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.rental-card {
-  display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
-  gap: 8px;
-  align-items: center;
-  min-height: 520px;
-  padding: 28px;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.88), transparent 28%),
-    linear-gradient(135deg, #fff5da 0%, #f4d38a 42%, #e8bf5c 100%);
-  border: 1px solid rgba(216, 165, 67, 0.42);
-  border-radius: 8px;
-  box-shadow: 0 18px 48px rgba(20, 9, 28, 0.12);
-}
-
-.rental-copy {
-  position: relative;
-  z-index: 1;
-}
-
-.rental-kicker {
-  margin: 0 0 10px;
-  color: rgba(38, 0, 42, 0.72);
-  text-transform: uppercase;
-  font-size: 0.78rem;
-  font-weight: 900;
-}
-
-.rental-card h3 {
-  margin: 0 0 14px;
-  color: var(--plum-deep);
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(2rem, 3.4vw, 3.25rem);
-  line-height: 0.94;
-}
-
-.rental-card p:last-of-type {
-  margin: 0;
-  color: rgba(38, 0, 42, 0.8);
-  font-size: 1rem;
-  line-height: 1.72;
-}
-
-.rental-btn {
-  margin-top: 24px;
-  width: fit-content;
-  background: var(--plum-deep);
-}
-
-.rental-car-frame {
-  display: grid;
-  place-items: center;
-  min-height: 100%;
-}
-
-.rental-car {
-  width: min(100%, 740px);
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 28px 26px rgba(38, 0, 42, 0.22));
 }
 
 .split {
@@ -791,16 +693,16 @@ h1 {
 }
 
 .image-main {
-  inset: 0 8% 12% 0;
+  inset: 0 8% 10% 0;
   width: 92%;
-  height: 88%;
+  height: 90%;
 }
 
 .image-float {
   right: 0;
   bottom: 0;
-  width: 48%;
-  aspect-ratio: 4 / 3;
+  width: 54%;
+  aspect-ratio: 5 / 4;
   border: 8px solid var(--paper);
 }
 
@@ -937,21 +839,35 @@ h1 {
 
 .gallery {
   display: grid;
-  grid-template-columns: 1fr 0.82fr 1fr;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 16px;
   padding-top: 0;
 }
 
 .gallery img {
   width: 100%;
-  height: 340px;
+  height: 100%;
+  min-height: 320px;
   object-fit: cover;
   border-radius: 8px;
 }
 
-.gallery img:nth-child(2) {
-  height: 420px;
-  margin-top: -40px;
+.gallery-large {
+  grid-column: span 5;
+  grid-row: span 2;
+}
+
+.gallery-tall {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.gallery-standard {
+  grid-column: span 4;
+}
+
+.gallery-wide {
+  grid-column: span 6;
 }
 
 .reviews {
@@ -1097,23 +1013,8 @@ h1 {
 
   .hero-content,
   .split,
-  .intro-split,
   .stock-band {
     grid-template-columns: 1fr;
-  }
-
-  .rental-card {
-    grid-template-columns: 1fr;
-    min-height: 0;
-  }
-
-  .rental-copy {
-    text-align: center;
-  }
-
-  .rental-btn {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .hero-content {
@@ -1182,30 +1083,6 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  .intro-main {
-    padding: 0;
-    text-align: center;
-  }
-
-  .intro-main h2,
-  .intro-main p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .rental-card {
-    gap: 18px;
-    padding: 22px 18px;
-  }
-
-  .rental-card h3 {
-    font-size: clamp(2rem, 10vw, 2.8rem);
-  }
-
-  .rental-car {
-    width: min(100%, 520px);
-  }
-
   .time-grid {
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
@@ -1236,10 +1113,9 @@ h1 {
     padding: 24px;
   }
 
-  .gallery img,
-  .gallery img:nth-child(2) {
+  .gallery img {
     height: 300px;
-    margin-top: 0;
+    min-height: 300px;
   }
 
   .location {
