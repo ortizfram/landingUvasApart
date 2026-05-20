@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --plum: #520059;
   --plum-deep: #26002a;
   --wine: #93345d;
@@ -78,7 +78,7 @@ textarea {
 
 .ticker span::after,
 .benefit-track span::after {
-  content: "·";
+  content: ".";
   color: var(--gold);
   font-weight: 900;
 }
@@ -1096,3 +1096,4 @@ h1 {
     animation-iteration-count: 1 !important;
   }
 }
+
